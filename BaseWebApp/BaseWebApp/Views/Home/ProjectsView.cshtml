@@ -1,0 +1,75 @@
+﻿@model IEnumerable<BaseWebApp.Models.Projects>
+
+@{
+    ViewBag.Title = "ProjectsView";
+}
+
+<h2>ProjectsView</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExeName32)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectFile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectFolder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectParentFolder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectFileContent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExeName32)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectFile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectFolder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectParentFolder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjectFileContent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProjectsId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProjectsId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProjectsId })
+        </td>
+    </tr>
+}
+
+</table>

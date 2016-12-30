@@ -1,0 +1,47 @@
+﻿{
+  "userSecretsId": "aspnet-CoreTest1-3b094d4d-ea67-4c47-bdfc-812dfdb0ce99",
+
+  "dependencies": {
+    "tools": {
+      "Microsoft.VisualStudio.Web.CodeGeneration.Tools": {
+        "version": "1.0.0-preview2-final",
+        "imports": [
+          "portable-net45+win8"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp1.0": {
+        "imports": [
+          "dotnet5.6",
+          "portable-net45+win8"
+        ]
+      }
+    },
+    "buildOptions": {
+      "emitEntryPoint": true,
+      "preserveCompilationContext": true
+    },
+    "runtimeOptions": {
+      "configProperties": {
+        "System.GC.Server": true
+      }
+    },
+    "publishOptions": {
+      "include": [
+        "wwwroot",
+        "**/*.cshtml",
+        "appsettings.json",
+        "web.config"
+      ]
+    },
+    "scripts": {
+      "prepublish": [ "bower install", "dotnet bundle" ],
+      "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+    },
+    "Microsoft.NETCore.App": "1.1.0",
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.1.0",
+    "Microsoft.VisualStudio.Web.CodeGeneration.Tools": "1.1.0-preview4-final",
+    "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": "1.1.0-preview4-final"
+  }
+}
