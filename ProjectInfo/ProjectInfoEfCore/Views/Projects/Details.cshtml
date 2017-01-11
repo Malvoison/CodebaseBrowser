@@ -9,6 +9,12 @@
 
 <dl class="dl-horizontal">
     <dt>
+        @Html.DisplayNameFor(model => model.ProjectsId)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ProjectsId)
+    </dd>
+    <dt>
         @Html.DisplayNameFor(model => model.Name)
     </dt>
     <dd>
@@ -45,6 +51,12 @@
         @Html.DisplayFor(model => model.ProjectParentFolder)
     </dd>
 </dl>
+
+<hr />
+
+<div>
+    @await Component.InvokeAsync("ClassList", new { projectsId = Model.ProjectsId })
+</div>
 
 <div>
     <a asp-controller="Projects" asp-action="Index">Back to Project List</a>

@@ -17,19 +17,27 @@ namespace ProjectInfoEfCore.ViewComponents
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(Guid projectsId)
+        public async Task<IViewComponentResult> InvokeAsync(Guid? projectsId)
         {
             var items = await GetItemsAsync(projectsId);
             return View(items);
         }
 
-        private Task<List<Classes>> GetItemsAsync(Guid projectsId)
+        private Task<List<Classes>> GetItemsAsync(Guid? projectsId)
         {
+            //var classList = from t1 in _context.Classes
+            //                let t2s = from t2 in _context.ClassMap
+            //                          where t2.ProjectsId == projectsId
+            //                          select t2.ClassesId
+            //                where t2s.Contains(t1.ClassesId)
+            //                select t1;
+
+            var classMap = from t2 in _context.ClassMap
+                           where t2.ProjectsId == projectsId
+                           select t2.ClassesId;
+
             var classList = from t1 in _context.Classes
-                            let t2s = from t2 in _context.ClassMap
-                                      where t2.ProjectsId == projectsId
-                                      select t2.ClassesId
-                            where t2s.Contains(t1.ClassesId)
+                            where classMap.Contains(t1.ClassesId)
                             select t1;
 
             return classList.ToListAsync();

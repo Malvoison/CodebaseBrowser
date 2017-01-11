@@ -1,0 +1,10 @@
+﻿@model IEnumerable<ProjectInfoEfCore.Models.Classes>
+
+<h3>Classes</h3>
+<ul>
+    @foreach (var cls in Model)
+    {
+        <li>@cls.ClassName</li>
+
+    }
+</ul>
