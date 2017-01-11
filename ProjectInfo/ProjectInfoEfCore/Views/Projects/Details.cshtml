@@ -1,0 +1,51 @@
+﻿@model ProjectInfoEfCore.Models.Projects
+
+@{ 
+    ViewBag.Title = Model.Name;
+}
+
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+<hr />
+
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.Name)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Name)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ExeName32)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ExeName32)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ProjectType)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ProjectType)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ProjectFile)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ProjectFile)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ProjectFolder)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ProjectFolder)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ProjectParentFolder)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ProjectParentFolder)
+    </dd>
+</dl>
+
+<div>
+    <a asp-controller="Projects" asp-action="Index">Back to Project List</a>
+</div>

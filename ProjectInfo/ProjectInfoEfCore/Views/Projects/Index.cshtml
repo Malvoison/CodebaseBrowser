@@ -6,30 +6,32 @@
 
 <h2>Projects</h2>
 
-<table class="table">
-    <tr>
-        <th>Name</th>
-        <th>ExeName32</th>
-        <th>ProjectFolder</th>
-        <th>ProjectParentFolder</th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div>
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExeName32)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem =>item.ProjectFolder)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectParentFolder)
-            </td>
+            <th>Name</th>
+            <th>Executable Name</th>
+            <th>Project Folder</th>
+            <th>Parent Folder</th>
         </tr>
 
-    }
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Projects" asp-action="Details" asp-route-id="@item.ProjectsId">@Html.DisplayFor(modelItem => item.Name)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExeName32)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectFolder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectParentFolder)
+                </td>
+            </tr>
+
+        }
+    </table>
+</div>

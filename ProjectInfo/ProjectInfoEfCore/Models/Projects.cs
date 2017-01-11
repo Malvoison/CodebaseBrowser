@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjectInfoEfCore.Models
 {
@@ -15,11 +16,17 @@ namespace ProjectInfoEfCore.Models
         }
 
         public Guid ProjectsId { get; set; }
+        [Display(Name = "Name")]
         public string Name { get; set; }
+        [Display(Name = "Executable Name")]
         public string ExeName32 { get; set; }
+        [Display(Name = "Project Type")]
         public string ProjectType { get; set; }
+        [Display(Name = "Project File")]
         public string ProjectFile { get; set; }
+        [Display(Name = "Project Folder")]
         public string ProjectFolder { get; set; }
+        [Display(Name = "Parent Folder")]
         public string ProjectParentFolder { get; set; }
         public byte[] ProjectFileContent { get; set; }
         public string DocType { get; set; }
