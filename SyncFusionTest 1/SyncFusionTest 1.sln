@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{642EA504-4231-4045-ACDF-51E680679D53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7F3DB73C-6B32-470A-8527-EA4568B17D34}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SyncFusionTest 1", "src\SyncFusionTest 1\SyncFusionTest 1.xproj", "{3613B0E4-34E7-407F-9542-0F1CEB6EB347}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3613B0E4-34E7-407F-9542-0F1CEB6EB347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3613B0E4-34E7-407F-9542-0F1CEB6EB347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3613B0E4-34E7-407F-9542-0F1CEB6EB347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3613B0E4-34E7-407F-9542-0F1CEB6EB347}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3613B0E4-34E7-407F-9542-0F1CEB6EB347} = {642EA504-4231-4045-ACDF-51E680679D53}
+	EndGlobalSection
+EndGlobal

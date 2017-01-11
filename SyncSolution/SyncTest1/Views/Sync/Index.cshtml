@@ -1,0 +1,29 @@
+@model SyncTest1.Controllers.SyncController
+
+@{
+    ViewData["Title"] = "Kenz New View";
+}
+
+<h2>Kenz New View</h2>
+
+<div>
+    <ej-grid id="FlatGrid">        
+        <e-columns>
+            <e-column field="OrderID" header-text="Order ID" text-align="Right" width="70"></e-column>
+            <e-column field="CustomerID" header-text="Customer ID" text-align="Left" width="70"></e-column>
+            <e-column field="EmployeeID" header-text="Employee ID" text-align="Left" width="75"></e-column>
+            <e-column field="Freight" header-text="Freight" text-align="Right" format="{0:C2}" width="75"></e-column>
+            <e-column field="OrderDate" header-text="Order Date" text-align="Right" width="80" format="{0:MM/dd/yyyy}"></e-column>
+            <e-column field="ShipCity" header-text="Ship City" width="110"></e-column>
+        </e-columns>
+    </ej-grid>
+    
+</div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
