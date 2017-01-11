@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ProjectInfoEfCore.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ProjectInfoEfCore
 {
@@ -27,6 +29,9 @@ namespace ProjectInfoEfCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connection = @"Data Source=BHM-KWATTS\KEN1;Initial Catalog=ProjectInfo;Integrated Security=True";
+            services.AddDbContext<ProjectInfoContext>(options => options.UseSqlServer(connection));
+
             // Add framework services.
             services.AddMvc();
         }
@@ -53,7 +58,7 @@ namespace ProjectInfoEfCore
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Projects}/{action=Index}/{id?}");
             });
         }
     }

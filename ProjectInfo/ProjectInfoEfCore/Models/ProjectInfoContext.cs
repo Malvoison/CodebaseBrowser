@@ -29,13 +29,18 @@ namespace ProjectInfoEfCore.Models
         public virtual DbSet<RefMap> RefMap { get; set; }
         public virtual DbSet<Referencez> Referencez { get; set; }
 
+        public ProjectInfoContext(DbContextOptions<ProjectInfoContext> options)
+            : base(options)
+        {
+        }
+
         // Unable to generate entity type for table 'dbo.teststring'. Please see the warning messages.
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-            optionsBuilder.UseSqlServer(@"Data Source=BHM-KWATTS\KEN1;Initial Catalog=ProjectInfo;Integrated Security=True");
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+        //    optionsBuilder.UseSqlServer(@"Data Source=BHM-KWATTS\KEN1;Initial Catalog=ProjectInfo;Integrated Security=True");
+        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
