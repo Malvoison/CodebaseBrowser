@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ProjectInfoEfCore.Models.Forms>
+
+<h3>Forms</h3>
+<hr />
+<ul>
+    @foreach (var frm in Model)
+    {
+        <li>@frm.FormFile</li>
+
+    }
+</ul>

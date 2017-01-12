@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ProjectInfoEfCore.Models.Referencez>
+
+<h3>References</h3>
+<hr />
+<ul>
+    @foreach (var reference in Model)
+    {
+        <li>@reference.ObjectName</li>
+
+    }
+</ul>
