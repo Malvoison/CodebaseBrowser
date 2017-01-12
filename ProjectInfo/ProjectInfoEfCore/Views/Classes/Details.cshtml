@@ -25,5 +25,11 @@
 <hr/>
 
 <div>
+    @await Component.InvokeAsync("ClassUsedBy", new { classesId = Model.ClassesId })
+</div>
+
+<hr/>
+
+<div>
     @await Component.InvokeAsync("ClassCode", new { classesId = Model.ClassesId })
 </div>
