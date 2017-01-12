@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ProjectInfoEfCore.Models.Modules>
+
+<h3>Modules</h3>
+<hr />
+<ul>
+    @foreach (var mod in Model)
+    {
+        <li>@mod.ModuleName</li>
+
+    }
+</ul>

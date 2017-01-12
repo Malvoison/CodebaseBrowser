@@ -6,13 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProjectInfoEfCore.Models;
 
+
 namespace ProjectInfoEfCore.ViewComponents
 {
-    public class ClassListViewComponent : ViewComponent
+    public class ModuleListViewComponent : ViewComponent
     {
         private readonly ProjectInfoContext _context;
 
-        public ClassListViewComponent(ProjectInfoContext context)
+        public ModuleListViewComponent(ProjectInfoContext context)
         {
             _context = context;
         }
@@ -23,17 +24,17 @@ namespace ProjectInfoEfCore.ViewComponents
             return View(items);
         }
 
-        private Task<List<Classes>> GetItemsAsync(Guid? projectsId)
+        private Task<List<Modules>> GetItemsAsync(Guid? projectsId)
         {
-            var classMap = from t2 in _context.ClassMap
-                           where t2.ProjectsId == projectsId
-                           select t2.ClassesId;
+            var moduleMap = from t2 in _context.ModMap
+                            where t2.ProjectsId == projectsId
+                            select t2.ModulesId;
 
-            var classList = from t1 in _context.Classes
-                            where classMap.Contains(t1.ClassesId)
-                            select t1;
+            var moduleList = from t1 in _context.Modules
+                             where moduleMap.Contains(t1.ModulesId)
+                             select t1;
 
-            return classList.ToListAsync();
+            return moduleList.ToListAsync();
         }
     }
 }
