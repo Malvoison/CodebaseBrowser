@@ -7,7 +7,10 @@
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-theme.css"/>
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/lib/prism/themes/prism.css" />
+        <link rel="stylesheet" href="~/lib/prism/plugins/line-numbers/prism-line-numbers.css" />        
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -30,7 +33,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Projects" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Projects" asp-action="Index">Projects</a></li>
+                    <li><a asp-area="" asp-controller="Classes" asp-action="Index">Classes</a></li>
                     @*<li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>*@
                 </ul>
@@ -49,6 +53,9 @@
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/lib/prism/prism.js"></script>
+        <script src="~/lib/prism/plugins/line-numbers/prism-line-numbers.js"></script>
+        <script src="~/lib/prism/plugins/normalize-whitespace/prism-normalize-whitespace.js"></script>
     </environment>
     <environment names="Staging,Production">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
