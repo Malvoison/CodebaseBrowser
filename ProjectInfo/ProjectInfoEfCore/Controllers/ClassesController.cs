@@ -8,22 +8,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ProjectInfoEfCore.Controllers
 {
-    public class ProjectsController : Controller
+    public class ClassesController : Controller
     {
         private ProjectInfoContext _context;
 
-        public ProjectsController(ProjectInfoContext context)
+        public ClassesController(ProjectInfoContext context)
         {
             _context = context;
         }
 
-        //  GET:  /Projects
+        // GET: /Classes
         public IActionResult Index()
         {
-            return View(_context.Projects.ToList());
+            return View(_context.Classes.ToList());
         }
 
-        //  GET:  Projects/Details/FE3464D8-E6A5-E611-93D4-005056851664
+        //  GET: Classes/Details/2B3564D8-E6A5-E611-93D4-005056851664
         public async Task<IActionResult> Details(Guid? id)
         {
             if (id == null)
@@ -31,13 +31,13 @@ namespace ProjectInfoEfCore.Controllers
                 return NotFound();
             }
 
-            var project = await _context.Projects.SingleOrDefaultAsync(m => m.ProjectsId == id);
-            if (project == null)
+            var cls = await _context.Classes.SingleOrDefaultAsync(m => m.ClassesId == id);
+            if (cls == null)
             {
                 return NotFound();
             }
 
-            return View(project);
+            return View(cls);
         }
     }
 }

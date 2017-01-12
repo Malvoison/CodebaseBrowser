@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjectInfoEfCore.Models
 {
@@ -12,7 +13,9 @@ namespace ProjectInfoEfCore.Models
         }
 
         public Guid ClassesId { get; set; }
+        [Display(Name = "Class Name")]
         public string ClassName { get; set; }
+        [Display(Name = "Class File")]
         public string ClassFile { get; set; }
         public byte[] ClassFileContent { get; set; }
         public string DocType { get; set; }
