@@ -1,0 +1,34 @@
+﻿@model ProjectInfoEfCore.Models.Modules
+
+@{ 
+    ViewBag.Title = Model.ModuleName;
+}
+
+<h2>@Html.DisplayFor(model => model.ModuleName)</h2>
+<hr/>
+
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.ModuleName)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ModuleName)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ModuleFile)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.ModuleFile)
+    </dd>
+</dl>
+
+<hr/>
+
+<div>
+    @await Component.InvokeAsync("ModuleUsedBy", new { modulesId = Model.ModulesId })
+</div>
+
+
+<div>
+    @await Component.InvokeAsync("ModuleCode", new { modulesId = Model.ModulesId })
+</div>

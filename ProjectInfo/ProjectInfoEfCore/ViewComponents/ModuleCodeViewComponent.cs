@@ -9,20 +9,20 @@ using ProjectInfoEfCore.Models;
 
 namespace ProjectInfoEfCore.ViewComponents
 {
-    public class ClassCodeViewComponent : ViewComponent
+    public class ModuleCodeViewComponent : ViewComponent
     {
         private readonly ProjectInfoContext _context;
 
-        public ClassCodeViewComponent(ProjectInfoContext context)
+        public ModuleCodeViewComponent(ProjectInfoContext context)
         {
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(Guid? classesId)
+        public async Task<IViewComponentResult> InvokeAsync(Guid? modulesId)
         {
-            var code = from t1 in _context.Classes
-                       where t1.ClassesId == classesId
-                       select t1.ClassFileContent;
+            var code = from t1 in _context.Modules
+                       where t1.ModulesId == modulesId
+                       select t1.ModuleFileContent;
 
             byte[] arrCode = await code.FirstOrDefaultAsync();
 
@@ -38,6 +38,5 @@ namespace ProjectInfoEfCore.ViewComponents
 
             return View(pc);
         }
-
     }
 }

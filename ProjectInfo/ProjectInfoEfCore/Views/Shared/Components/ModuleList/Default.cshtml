@@ -4,8 +4,9 @@
 <hr />
 <ul>
     @foreach (var mod in Model)
-    {
-        <li>@mod.ModuleName</li>
-
+    {        
+        <li>
+            <a asp-controller="Modules" asp-action="Details" asp-route-id="@mod.ModulesId">@mod.ModuleName</a>
+        </li>
     }
 </ul>
