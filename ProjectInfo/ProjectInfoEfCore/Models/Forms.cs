@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjectInfoEfCore.Models
 {
@@ -12,6 +13,7 @@ namespace ProjectInfoEfCore.Models
         }
 
         public Guid FormsId { get; set; }
+        [Display(Name = "Form File")]
         public string FormFile { get; set; }
         public byte[] FormFileContent { get; set; }
         public string DocType { get; set; }

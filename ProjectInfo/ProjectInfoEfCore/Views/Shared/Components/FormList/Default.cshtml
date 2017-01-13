@@ -4,8 +4,10 @@
 <hr />
 <ul>
     @foreach (var frm in Model)
-    {
-        <li>@frm.FormFile</li>
+    {        
+        <li>
+            <a asp-controller="Forms" asp-action="Details" asp-route-id="@frm.FormsId">@frm.FormFile</a>
+        </li>
 
     }
 </ul>

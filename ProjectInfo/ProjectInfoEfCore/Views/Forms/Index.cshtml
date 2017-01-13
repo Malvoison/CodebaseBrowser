@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ProjectInfoEfCore.Models.Forms>
+
+@{ 
+    ViewBag.Title = "Forms";
+}
+
+<h2>Forms</h2>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>Form File</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Forms" asp-action="Details" asp-route-id="@item.FormsId">@Html.DisplayFor(modelItem => item.FormFile)</a>
+                </td>
+            </tr>
+
+        }
+    </table>
+</div>

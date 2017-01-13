@@ -1,0 +1,17 @@
+﻿@model ProjectInfoEfCore.Models.Forms
+
+@{ 
+    ViewBag.Title = Model.FormFile;
+}
+
+<h2>@Html.DisplayFor(model => model.FormFile)</h2>
+<hr/>
+
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.FormFile)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.FormFile)
+    </dd>
+</dl>
