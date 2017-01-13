@@ -2,10 +2,21 @@
 
 <h3>Object References</h3>
 <hr />
-<ul>
-    @foreach (var obj in Model)
-    {
-        <li>@obj.ObjectFile</li>
 
-    }
-</ul>
+<div>
+    <table class="table">
+        <tr>
+            <th>Object File</th>
+            <th>Object Version</th>            
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ObjectFile)</td>
+                <td>@Html.DisplayFor(modelItem => item.ObjectVersion)</td>                
+            </tr>
+
+        }
+    </table>
+</div>

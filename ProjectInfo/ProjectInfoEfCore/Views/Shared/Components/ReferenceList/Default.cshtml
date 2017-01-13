@@ -2,10 +2,23 @@
 
 <h3>References</h3>
 <hr />
-<ul>
-    @foreach (var reference in Model)
-    {
-        <li>@reference.ObjectName</li>
 
-    }
-</ul>
+<div>
+    <table class="table">
+        <tr>
+            <th>Object Name</th>
+            <th>Object Version</th>
+            <th>File Path</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ObjectName)</td>
+                <td>@Html.DisplayFor(modelItem => item.ObjectVersion)</td>
+                <td>@Html.DisplayFor(modelItem => item.FilePath)</td>
+            </tr>
+
+        }
+    </table>
+</div>
