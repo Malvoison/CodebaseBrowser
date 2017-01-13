@@ -31,5 +31,9 @@
 <hr/>
 
 <div>
+    @await Component.InvokeAsync("ClassSql", new { classesId = Model.ClassesId })
+</div>
+<hr />
+<div>
     @await Component.InvokeAsync("ClassCode", new { classesId = Model.ClassesId })
 </div>

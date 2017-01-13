@@ -27,8 +27,11 @@
 <div>
     @await Component.InvokeAsync("ModuleUsedBy", new { modulesId = Model.ModulesId })
 </div>
-
-
+<hr/>
+<div>
+    @await Component.InvokeAsync("ModuleSql", new { modulesId = Model.ModulesId})
+</div>
+<hr />
 <div>
     @await Component.InvokeAsync("ModuleCode", new { modulesId = Model.ModulesId })
 </div>

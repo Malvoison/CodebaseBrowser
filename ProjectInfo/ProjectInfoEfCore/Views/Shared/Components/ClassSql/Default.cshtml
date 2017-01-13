@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ProjectInfoEfCore.Models.ProjectSql>
+
+<h3>SQL</h3>
+<hr />
+<ul>
+    @foreach (var sql in Model)
+    {
+        <li>@sql.LeSql</li>
+
+    }
+</ul>
