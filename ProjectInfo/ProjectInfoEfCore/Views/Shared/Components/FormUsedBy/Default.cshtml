@@ -1,0 +1,13 @@
+﻿@model IEnumerable<ProjectInfoEfCore.Models.Projects>
+
+<h3>Used by Projects:</h3>
+<hr />
+<ul>
+    @foreach (var proj in Model)
+    {
+        <li>
+            <a asp-controller="Projects" asp-action="Details" asp-route-id="@proj.ProjectsId">@proj.Name</a>
+        </li>
+
+    }
+</ul>

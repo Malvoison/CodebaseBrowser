@@ -15,3 +15,20 @@
         @Html.DisplayFor(model => model.FormFile)
     </dd>
 </dl>
+
+<hr/>
+
+<div>
+    @await Component.InvokeAsync("FormUsedBy", new { formsId = Model.FormsId})
+</div>
+
+<hr/>
+<div>
+    @await Component.InvokeAsync("FormSql", new { formsId = Model.FormsId})
+</div>
+
+<hr/>
+
+<div>
+    @await Component.InvokeAsync("FormCode", new { formsId = Model.FormsId})
+</div>
