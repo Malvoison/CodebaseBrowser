@@ -3,7 +3,7 @@
 <h3>References</h3>
 <hr />
 
-<div>
+@*<div>
     <table class="table">
         <tr>
             <th>Object Name</th>
@@ -21,4 +21,17 @@
 
         }
     </table>
-</div>
+</div>*@
+
+@{ 
+    Html.EJ().Grid<Object>("RefGrid")
+        .Datasource((IEnumerable<object>)Model)
+        .AllowPaging()
+        .AllowSorting()
+        .Columns(col =>
+        {
+            col.Field("ObjectName").HeaderTextAlign(TextAlign.Center).HeaderText("Object Name").Add();
+            col.Field("ObjectVersion").HeaderTextAlign(TextAlign.Center).HeaderText("Object Version").TextAlign(TextAlign.Center).Add();
+            col.Field("FilePath").HeaderTextAlign(TextAlign.Center).HeaderText("File Path").TextAlign(TextAlign.Left).Add();
+        }).Render();
+}

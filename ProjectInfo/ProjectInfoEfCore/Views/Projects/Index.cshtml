@@ -6,32 +6,17 @@
 
 <h2>Projects</h2>
 
-<div>
-    <table class="table">
-        <tr>
-            <th>Name</th>
-            <th>Executable Name</th>
-            <th>Project Folder</th>
-            <th>Parent Folder</th>
-        </tr>
 
-        @foreach (var item in Model)
+@{ 
+    Html.EJ().Grid<Object>("ProjGrid")
+        .Datasource((IEnumerable<object>)Model)
+        .AllowGrouping()
+        .GroupSettings(group => { group.GroupedColumns(col => { col.Add("ProjectParentFolder"); }); })
+        .Columns(col =>
         {
-            <tr>
-                <td>
-                    <a asp-controller="Projects" asp-action="Details" asp-route-id="@item.ProjectsId">@Html.DisplayFor(modelItem => item.Name)</a>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ExeName32)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProjectFolder)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProjectParentFolder)
-                </td>
-            </tr>
-
-        }
-    </table>
-</div>
+            col.Field("Name").HeaderText("Name").Template("<a href='/Projects/Details/{{:ProjectsId}}'>{{:Name}}</a>").Add();
+            col.Field("ExeName32").HeaderText("Executable Name").Add();
+            col.Field("ProjectFolder").HeaderText("Project Folder").Add();
+            col.Field("ProjectParentFolder").HeaderText("Parent Folder").Add();
+        }).Render();
+}

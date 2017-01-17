@@ -18,17 +18,26 @@
 
 <hr/>
 
+<ej-accordion id="basicAccordion" enable-multiple-open="true">
+    <e-accordion-items>
+        <e-accordion-item text="Used By Projects">
+            <e-content-template>
+                <div>
+                    @await Component.InvokeAsync("FormUsedBy", new { formsId = Model.FormsId })
+                </div>
+            </e-content-template>
+        </e-accordion-item>
+        <e-accordion-item text="SQL">
+            <e-content-template>
+                <div>
+                    @await Component.InvokeAsync("FormSql", new { formsId = Model.FormsId })
+                </div>
+            </e-content-template>
+        </e-accordion-item>
+    </e-accordion-items>
+</ej-accordion>
+
 <div>
-    @await Component.InvokeAsync("FormUsedBy", new { formsId = Model.FormsId})
+    @await Component.InvokeAsync("FormCode", new { formsId = Model.FormsId })
 </div>
 
-<hr/>
-<div>
-    @await Component.InvokeAsync("FormSql", new { formsId = Model.FormsId})
-</div>
-
-<hr/>
-
-<div>
-    @await Component.InvokeAsync("FormCode", new { formsId = Model.FormsId})
-</div>

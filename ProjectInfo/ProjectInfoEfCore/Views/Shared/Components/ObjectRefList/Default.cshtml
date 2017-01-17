@@ -3,20 +3,16 @@
 <h3>Object References</h3>
 <hr />
 
-<div>
-    <table class="table">
-        <tr>
-            <th>Object File</th>
-            <th>Object Version</th>            
-        </tr>
 
-        @foreach (var item in Model)
+@{ 
+    Html.EJ().Grid<Object>("ObjRefGrid")
+        .Datasource((IEnumerable<ProjectInfoEfCore.Models.ObjectRefs>)Model)
+        .AllowPaging()
+        .Columns(col =>
         {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.ObjectFile)</td>
-                <td>@Html.DisplayFor(modelItem => item.ObjectVersion)</td>                
-            </tr>
+            col.Field("ClsId").HeaderTextAlign(TextAlign.Center).HeaderText("CLSID").Add();
+            col.Field("ObjectVersion").HeaderTextAlign(TextAlign.Center).HeaderText("Object Version").Add();
+            col.Field("ObjectFile").HeaderTextAlign(TextAlign.Center).HeaderText("ObjectFile").Add();
 
-        }
-    </table>
-</div>
+        }).Render();
+}
